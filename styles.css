@@ -1,5 +1,9 @@
 html {
-    font-size: 11px;
+    font-size: 12px;
     text-align: center;
     color: hsl(228, 45%, 44%);
+    background: linear-gradient(hsl(273, 75%, 66%), hsl(240, 73%, 65%));
+    height: 100%;
 }
+
+body {}
