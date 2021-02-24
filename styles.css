@@ -123,8 +123,10 @@ body {
     font-weight: 400;
     margin-top: 17px;
     display: none;
-    margin-right: 90px;
     overflow: hidden;
+    text-align: left;
+    margin-right: 78px;
+    line-height: 20px;
     max-height: 0;
     transition: max-height 0.2s ease-out;
 }
@@ -197,9 +199,18 @@ body {
     }
 }
 
+footer {
+    position: absolute;
+    text-align: center;
+    bottom: 0;
+}
+
 /* Mobile Design */
 
-@media only screen and (max-width: 500px) {
+@media screen and (max-width: 600px) {
+    .box {
+        display: none;
+    }
     .faq-img {
         display: none;
     }
@@ -234,5 +245,19 @@ body {
         top: 170px;
         padding-right: 10px;
         animation: fade-in 1.5s ease-in 1 both running;
+    }
+}
+
+@media screen and (max-width: 330px) {
+    html {
+        background-color: black;
+        font-size: 10px;
+    }
+    .accordion {
+        width: 250px;
+    }
+    .panel {
+        margin-right: 32px;
+        margin-left: 24px;
     }
 }
