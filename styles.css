@@ -1,9 +1,238 @@
-html {
-    font-size: 12px;
-    text-align: center;
-    color: hsl(228, 45%, 44%);
-    background: linear-gradient(hsl(273, 75%, 66%), hsl(240, 73%, 65%));
-    height: 100%;
+body {
+    box-sizing: border-box;
 }
 
-body {}
+body {
+    font-size: 12px;
+    margin: 0;
+    font-family: 'Kumbh Sans', sans-serif;
+}
+
+.container {
+    background: linear-gradient(hsl(273, 75%, 66%), hsl(240, 73%, 65%));
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.faq-container {
+    display: flex;
+    width: 57.5625rem;
+    height: 31.875rem;
+    background-color: hsl(0, 0%, 100%);
+    box-shadow: 0px 50px 50px 20px hsla(0, 0%, 0%, 10%);
+    border-radius: 22px;
+}
+
+.faq-img {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+
+.content-img-dont-overflow {
+    position: absolute;
+}
+
+.bg-pattern {
+    /* width: 100%; */
+    left: -572px;
+    top: -290px;
+    position: absolute;
+    z-index: 1;
+    animation-name: fade-in-bg;
+    animation-duration: 1.5s;
+    animation-timing-function: ease-out;
+    /* animation-direction: alternate; */
+    animation-iteration-count: 1;
+    animation-play-state: running;
+}
+
+.woman-online {
+    position: absolute;
+    left: -78px;
+    top: 70px;
+    z-index: 2;
+    animation-name: fade-in-woman;
+    animation-duration: 1.5s;
+    animation-timing-function: ease-out;
+    /* animation-direction: alternate; */
+    animation-iteration-count: 1;
+    animation-play-state: running;
+}
+
+.box {
+    position: absolute;
+    top: 220px;
+    left: -100px;
+    z-index: 3;
+    animation: fade-in-box 1.5s ease-in 1 both running, bounce 1.5s ease-in-out 0s alternate infinite both running;
+}
+
+.faq-questions {
+    height: 100%;
+    width: 100%;
+    overflow: scroll;
+    animation: fade-in 1.5s ease-in 1 both running;
+}
+
+.faq-title {
+    font-size: 28px;
+    font-weight: 700;
+    color: hsl(237, 12%, 33%);
+    margin: 70px 16px 0px 16px;
+    margin-bottom: 27px;
+}
+
+.questions {
+    margin-left: 16px;
+    margin-right: 16px;
+}
+
+.accordion {
+    height: 50px;
+    width: 350px;
+    text-align: left;
+    background-color: white;
+    border: none;
+    border-bottom: 1px solid hsl(240, 5%, 91%);
+    font-size: 12px;
+    font-weight: 400;
+    padding-left: 0;
+}
+
+.accordion:hover {
+    color: hsl(14, 88%, 65%);
+}
+
+.active {
+    font-weight: 700;
+    /* color: hsl(14, 88%, 65%); */
+}
+
+.accordion img {
+    margin-top: 4px;
+    float: right;
+}
+
+.panel {
+    font-size: 12px;
+    color: hsl(240, 6%, 50%);
+    font-weight: 400;
+    margin-top: 17px;
+    display: none;
+    margin-right: 90px;
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.2s ease-out;
+}
+
+.panel p {
+    margin: 0;
+    /* margin-bottom: 15px; */
+}
+
+.last {
+    margin-bottom: 17px;
+}
+
+.rotate {
+    transform: rotate(180deg);
+}
+
+.mobile-background {
+    display: none;
+}
+
+@keyframes fade-in-box {
+    0% {
+        top: 230px;
+        opacity: 0;
+    }
+    100% {
+        top: 210px;
+        opacity: 1;
+    }
+}
+
+@keyframes bounce {
+    0% {
+        top: 220px;
+    }
+    100% {
+        top: 210px;
+    }
+}
+
+@keyframes fade-in-woman {
+    0% {
+        top: 100px;
+        opacity: 0;
+    }
+    100% {
+        top: 70px;
+        opacity: 1;
+    }
+}
+
+@keyframes fade-in-bg {
+    0% {
+        top: -260px;
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+        top: -290px;
+    }
+}
+
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Mobile Design */
+
+@media only screen and (max-width: 500px) {
+    .faq-img {
+        display: none;
+    }
+    .content-img-dont-overflow {
+        display: none;
+    }
+    .faq-container {
+        margin: 0 25px;
+        text-align: center;
+        box-shadow: 0px 50px 50px 20px hsla(0, 0%, 0%, 10%);
+    }
+    .panel {
+        margin-right: 42px;
+        margin-left: 34px;
+    }
+    .accordion {
+        width: 300px;
+    }
+    .faq-title {
+        margin-top: 110px;
+    }
+    .mobile-background {
+        display: block;
+        top: 120px;
+        position: fixed;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        padding-right: 40px;
+        animation: fade-in 1.5s ease-in 1 both running;
+    }
+    .m-bg-pattern {
+        top: 170px;
+        padding-right: 10px;
+        animation: fade-in 1.5s ease-in 1 both running;
+    }
+}
