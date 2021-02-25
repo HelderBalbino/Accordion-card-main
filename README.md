@@ -1,5 +1,7 @@
 # Frontend Mentor - FAQ Accordion Card
 
+## [See my live project on here](https://helderbalbino.github.io/Accordion-card-main/)
+
 ![Design preview for the FAQ Accordion Card coding challenge](./design/desktop-preview.jpg)
 
 ## Welcome! 👋
